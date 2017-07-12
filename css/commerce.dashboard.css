@@ -3,7 +3,81 @@
  * Commerce dashboard styling.
  */
 
-/* Note. */
-a .commerce-dashboard__item-description {
-  color: red;
+/* Dashboard groups. */
+.commerce-dashboard__group {
+  padding-bottom: 10px;
+}
+
+.commerce-dashboard__group-title {
+  margin: 10px 0 5px;
+}
+
+/* Dashboard items. */
+.commerce-dashboard__items {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+}
+
+.commerce-dashboard__item {
+  flex: 0 0 280px;
+  position: relative;
+  width: 280px;
+  margin: 17px 30px 30px 0;
+}
+.commerce-dashboard__item:last-of-type {
+  margin-right: 0;
+}
+
+.commerce-dashboard__item-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 40px 30px;
+  background: #fcfcfa;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  -webkit-box-shadow: 0px 2px 14px -1px rgba(0,116,189,0.0);
+  -moz-box-shadow: 0px 2px 14px -1px rgba(0,116,189,0.0);
+  box-shadow: 0px 2px 14px -1px rgba(0,116,189,0.0);
+  text-align: center;
+  -webkit-transition: background 0.2s ease-in-out,opacity 0.2s ease-in-out,border 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out,opacity 0.2s ease-in-out,border 0.2s ease-in-out;
+}
+.commerce-dashboard__item-link:hover,
+.commerce-dashboard__item-link:focus {
+  background: #fff;
+  border-color: #0074bd;
+  -webkit-box-shadow: 0px 2px 14px -1px rgba(0,116,189,0.25);
+  -moz-box-shadow: 0px 2px 14px -1px rgba(0,116,189,0.25);
+  box-shadow: 0px 2px 14px -1px rgba(0,116,189,0.25);
+  text-decoration: none;
+}
+
+.commerce-dashboard__item-description {
+ color: #333;
+}
+
+/* Dashboard items - Icons. */
+.commerce-dashboard__item-icon {
+  height: 55px;
+  min-width: 55px;
+}
+
+/* Dashboard items - Alert. */
+.commerce-dashboard__item-alert {
+  position: absolute;
+  top: -17px;
+  left: 235px;
+  width: 30px;
+  height: 30px;
+  background: #ccc;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 30px;
 }

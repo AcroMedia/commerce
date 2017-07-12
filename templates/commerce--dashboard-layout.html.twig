@@ -18,15 +18,25 @@
       </h2>
       <div class="commerce-dashboard__items">
         {% for item in group %}
-          <a
-            href="{{ item.url.toString }}"
-            class="commerce-dashboard__item commerce-dashboard__item--{{ item.class }}"
-            aria-label="{{ item.title }}"
-            >
-            <div class="commerce-dashboard__item-icon"></div>
-            <h3 class="commerce-dashboard__item-title">{{ item.title }}</h3>
-            <div class="commerce-dashboard__item-description">{{ item.description }}</div>
-          </a>
+          {# Check for item class to only render out items we want to display. #}
+          {% if item.class %}
+            <div class="commerce-dashboard__item commerce-dashboard__item--{{ item.class }}">
+              {# Alert icon. #}
+              {# TODO: Set alert via twig variable. Here now just for styling. #}
+              <a href="http://google.com" class="commerce-dashboard__item-alert">?</a>
+
+              {# Dashboard item link. #}
+              <a
+                href="{{ item.url.toString }}"
+                class="commerce-dashboard__item-link"
+                aria-label="{{ item.title }}"
+              >
+                <div class="commerce-dashboard__item-icon"></div>
+                <h3 class="commerce-dashboard__item-title">{{ item.title }}</h3>
+                <div class="commerce-dashboard__item-description">{{ item.description }}</div>
+              </a>
+            </div>
+          {% endif %}
         {% endfor %}
       </div>
     </div>
