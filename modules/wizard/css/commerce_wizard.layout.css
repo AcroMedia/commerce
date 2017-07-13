@@ -1,0 +1,10 @@
+.commerce__wizard--intro ol {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-left: 1em;
+  font-size: 1.125em;
+  line-height: 1.75em;
+}
+.commerce__wizard--intro ol li {
+  margin-bottom: 1.25em;
+}

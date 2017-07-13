@@ -1,0 +1,6 @@
+commerce.commerce_wizard:
+  title: 'Commerce Setup'
+  description: 'Quick Installation Method.'
+  parent: 'commerce.admin_commerce'
+  route_name: 'commerce.commerce_wizard'
+  weight: 100
