@@ -12,7 +12,9 @@ toolbar:
 dashboard:
   version: VERSION
   js:
-      js/dashboard.js: {}
+    js/dashboard.js: {}
+  dependencies:
+    - core/jquery
   css:
     theme:
       css/commerce.dashboard.css: {}

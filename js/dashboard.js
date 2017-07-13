@@ -3,7 +3,7 @@
  * Dashboard UI behaviors.
  */
 
-(function ($, window, Drupal) {
+(function ($, Drupal) {
 
   'use strict';
 
@@ -16,9 +16,13 @@
    *   Attaches the behavior for the dashboard icons.
    */
   Drupal.behaviors.dashboardIcons = {
-    attach: function () {
-      console.log('Hello world!');
+    attach: function (context, settings) {
+      $(context).find('.commerce-dashboard__item').each(function () {
+        var $itemName = $(this).find('.commerce-dashboard__item-title').text();
+        var $itemLetter =  $itemName.charAt(0);
+        $(this).find('.commerce-dashboard__item-icon').text($itemLetter);
+      });
     }
   };
 
-})(jQuery, window, Drupal);
+})(jQuery, Drupal);
