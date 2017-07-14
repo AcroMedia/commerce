@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Dashboard layout template.
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="commerce-dashboard">
+  <div id="commerce-wizard-progress">
+    <div> {{ 'Placeholder for commerce_wizard progress'|t }}</div>
+  </div>
+
+  {% for group in groups %}
+    <h2>{{ group.title }}</h2>
+    {% for item in group %}
+      <div class="box {{ item.class }}">
+        <a href="{{ item.url.toString }}">{{ item.title }}</a>
+        <div>{{ item.description }}</div>
+      </div>
+    {% endfor %}
+  {% endfor %}
+</div>

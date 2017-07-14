@@ -3,9 +3,16 @@ entity.commerce_store.collection:
   route_name: 'entity.commerce_store.collection'
   parent: 'commerce.admin_commerce'
   description: 'Manage your stores.'
+  options:
+    attributes:
+      group: Store Management & Configuration
+
 
 entity.commerce_store_type.collection:
   title: 'Store types'
   route_name: 'entity.commerce_store_type.collection'
-  parent: 'commerce.configuration'
+  parent: commerce.admin_commerce
   description: 'Manage your store types.'
+  options:
+    attributes:
+      group: Store Management & Configuration

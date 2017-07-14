@@ -212,3 +212,54 @@ function commerce_module_preuninstall($module) {
     \Drupal::service('commerce.bundle_plugin_installer')->uninstallBundles($entity_type, [$module]);
   }
 }
+
+/**
+ * Implements hook_theme().
+ */
+function commerce_theme($existing, $type, $theme, $path) {
+  return [
+    'commerce__dashboard_layout' => [
+      'variables' => [
+        'groups' => [],
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function commerce_theme_suggestions_admin_block_content_alter(&$suggestions, $vars, $hook) {
+  if ('commerce.admin_commerce' == \Drupal::routeMatch()->getRouteName()) {
+    $suggestions[] = 'commerce__' . 'dashboard_layout';
+  }
+}
+
+/**
+ * Implements template_preprocess_HOOK().
+ *
+ * TODO:Reorder groups according to their weights.
+ */
+function template_preprocess_commerce__dashboard_layout(&$vars) {
+  $items = $vars['content'];
+  $groups = [];
+
+  foreach ($items as $key => $item) {
+    // Add unique class to commerce components.
+    $class = strtolower($item['title']);
+    $class = str_replace(' ', '-', $class);
+    $item['class'] = $class;
+
+    // Group together components.
+    if (isset($item['options']['attributes']['group'])) {
+      $group = $item['options']['attributes']['group'];
+      $groups[$group]['title'] = $group;
+      $groups[$group][] = $item;
+    }
+    else {
+      $groups['miscellaneous']['title'] = t('Miscellaneous');
+      $groups['miscellaneous'][] = $item;
+    }
+  }
+  $vars['groups'] = $groups;
+}

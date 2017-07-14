@@ -1,5 +1,8 @@
 entity.commerce_payment_gateway.collection:
   title: 'Payment gateways'
   route_name: 'entity.commerce_payment_gateway.collection'
-  parent: 'commerce.configuration'
+  parent: commerce.admin_commerce'
   description: 'Manage your payment gateways.'
+  options:
+    attributes:
+      group: Store Management & Configuration

@@ -3,15 +3,24 @@ entity.commerce_order.collection:
   route_name: entity.commerce_order.collection
   parent: commerce.admin_commerce
   description: 'Manage your orders.'
+  options:
+    attributes:
+      group: Order Management
 
 entity.commerce_order_type.collection:
   title: Order types
   route_name: entity.commerce_order_type.collection
-  parent: commerce.configuration
+  parent: commerce.admin_commerce
   description: 'Manage your order types.'
+  options:
+    attributes:
+      group: Order Management
 
 entity.commerce_order_item_type.collection:
   title: Order item types
   route_name: entity.commerce_order_item_type.collection
-  parent: commerce.configuration
+  parent: commerce.admin_commerce
   description: 'Manage your order item types.'
+  options:
+    attributes:
+      group: Order Management

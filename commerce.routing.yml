@@ -10,6 +10,6 @@ commerce.configuration:
   path: '/admin/commerce/config'
   defaults:
     _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
-    _title: 'Configuration'
+    _title: 'Others'
   requirements:
     _permission: 'access commerce administration pages'

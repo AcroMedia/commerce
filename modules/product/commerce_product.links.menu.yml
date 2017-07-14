@@ -3,21 +3,33 @@ entity.commerce_product.collection:
   route_name: 'entity.commerce_product.collection'
   parent: 'commerce.admin_commerce'
   description: 'Manage your products.'
+  options:
+    attributes:
+      group: Products
 
 entity.commerce_product_attribute.collection:
   title: 'Product attributes'
   route_name: 'entity.commerce_product_attribute.collection'
   parent: 'commerce.admin_commerce'
   description: 'Manage your product attributes.'
+  options:
+    attributes:
+      group: Products
 
 entity.commerce_product_type.collection:
   title: 'Product types'
   route_name: 'entity.commerce_product_type.collection'
-  parent: 'commerce.configuration'
+  parent: commerce.admin_commerce
   description: 'Manage your product types.'
+  options:
+    attributes:
+      group: Products
 
 entity.commerce_product_variation_type.collection:
   title: 'Product variation types'
   route_name: 'entity.commerce_product_variation_type.collection'
-  parent: 'commerce.configuration'
+  parent: commerce.admin_commerce
   description: 'Manage your product variation types.'
+  options:
+    attributes:
+      group: Products

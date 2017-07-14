@@ -3,3 +3,6 @@ entity.commerce_promotion.collection:
   route_name: 'entity.commerce_promotion.collection'
   parent: 'commerce.admin_commerce'
   description: 'Manage your promotions.'
+  options:
+    attributes:
+      group: Store Management & Configuration

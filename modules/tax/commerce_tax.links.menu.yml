@@ -1,5 +1,8 @@
 entity.commerce_tax_type.collection:
   title: 'Tax types'
   route_name: 'entity.commerce_tax_type.collection'
-  parent: 'commerce.configuration'
+  parent: commerce.admin_commerce
   description: 'Manage your tax types.'
+  options:
+    attributes:
+      group: Store Management & Configuration
