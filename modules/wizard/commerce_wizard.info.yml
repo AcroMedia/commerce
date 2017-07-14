@@ -1,7 +1,0 @@
-name: Commerce Wizard
-type: module
-description: 'Provides a quick installation method for drupal commerce.'
-package: Commerce
-dependencies:
-  - commerce
-core: 8.x
