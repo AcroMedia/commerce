@@ -23,15 +23,32 @@ class WizardForm extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
 
-    /*
-     * 1. Store Details
-     */
-    $form['commerce_details'] = [
-      '#type' => 'stepper',
-      '#title' => t('1. Add Store Details'),
-    // '#open' => TRUE,.
-      '#button_text' => t('Next, location'),
-    ];
+/*
+ *   1. Store Details
+ */
+      $form['commerce_details'] = [
+          '#type' => 'stepper',
+          '#title' => $this->t('1. Store Details'),
+          '#button_text' => t('Next, location'),
+          // '#open' => TRUE,.
+          ];
+
+      $form['store_details']['name'] = [
+          '#type' => 'textfield',
+          '#title' => $this->t('Name'),
+          '#required' => TRUE,
+      ];
+
+      $form['store_details']['e-mail'] = [
+          '#type' => 'textfield',
+          '#title' => $this->t('E-mail'),
+          '#required' => TRUE,
+      ];
+
+      $form['store_details']['owner'] = [
+          '#type' => 'textfield',
+          '#title' => $this->t('Owner'),
+      ];
 
     /*
      * 2. Store Location
@@ -42,9 +59,39 @@ class WizardForm extends FormBase {
       '#button_text' => t('Next, currency'),
     ];
 
-    /*
-     * 3. Currency
-     */
+      $form['commerce_location']['country'] = [
+          '#type' => 'textfield',
+          '#title' => $this->t('Country'),
+          '#required' => TRUE,
+      ];
+
+      $form['commerce_location']['street_address'] = [
+          '#type' => 'textfield',
+          '#title' => $this->t('Street Address'),
+          '#required' => TRUE,
+      ];
+
+      $form['commerce_location']['city'] = [
+          '#type' => 'textfield',
+          '#title' => $this->t('City'),
+          '#required' => TRUE,
+      ];
+
+      $form['commerce_location']['province'] = [
+          '#type' => 'dropdown',
+          '#title' => $this->t('Province'),
+          '#required' => TRUE,
+      ];
+
+      $form['commerce_location']['postal_code'] = [
+          '#type' => 'textfield',
+          '#title' => $this->t('Postal Code'),
+          '#required' => TRUE,
+      ];
+
+      /*
+       * 3. Currency
+       */
     $form['commerce_currency'] = [
       '#type' => 'stepper',
       '#title' => t('3. Confirm the stores primary currency'),
