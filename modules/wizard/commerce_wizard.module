@@ -1,0 +1,60 @@
+<?php
+
+/**
+ * @file
+ * Installation guide for template.
+ */
+
+/**
+ * Provides the wizard setup installation guide.
+ */
+function commerce_wizard_theme($existing, $type, $theme, $path) {
+  $variables = [
+    'commerce_wizard' => [
+      'variables' => [
+        'intro_title' => NULL,
+        'intro_text' => NULL,
+      ],
+    ], 'stepper' => [
+      'render element' => 'element',
+      'template' => 'stepper',
+      'variables' => [
+        'title' => NULL,
+        'attributes' => NULL,
+        'children' => NULL,
+        'value' => NULL,
+        'required' => NULL,
+        'errors' => NULL,
+        'open' => FALSE,
+        'change_link' => TRUE,
+        'button_text' => NULL,
+        'skip_text' => NULL,
+      ],
+    ],
+  ];
+
+  return $variables;
+
+}
+
+/**
+ * Prepares variables for details element templates.
+ *
+ * Default template: details.html.twig.
+ */
+function commerce_wizard_stepper(&$variables) {
+  $element = $variables['element'];
+  $variables['attributes'] = $element['#attributes'];
+
+  $variables['title'] = (!empty($element['#title'])) ? $element['#title'] : '';
+  $variables['children'] = (isset($element['#children'])) ? $element['#children'] : '';
+  $variables['value'] = (isset($element['#value'])) ? $element['#value'] : '';
+  $variables['required'] = !empty($element['#required']) ? $element['#required'] : NULL;
+
+  $variables['change_link'] = (isset($element['#change_link'])) ? $element['#change_link'] : '';
+  $variables['button_text'] = (isset($element['#button_text'])) ? $element['#button_text'] : '';
+  $variables['skip_text'] = (isset($element['#skip_text'])) ? $element['#skip_text'] : '';
+
+  // Suppress error messages.
+  $variables['errors'] = NULL;
+}
